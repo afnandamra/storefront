@@ -1,15 +1,51 @@
-import { AppBar, Typography, Toolbar } from '@material-ui/core/';
+import {
+  AppBar,
+  Typography,
+  Toolbar,
+  Link,
+  Grid,
+  Box,
+} from '@material-ui/core/';
+import { connect } from 'react-redux';
+import { increment } from '../store/products-reducer';
+import ShoppingCartOutlinedIcon from '@material-ui/icons/ShoppingCartOutlined';
 
-function Header() {
+function Header(props) {
   return (
-    <AppBar position="relative">
+    <AppBar position="relative" color="secondary">
       <Toolbar>
-        <Typography variant="h6" color="inherit" noWrap>
-          OUR STORE
-        </Typography>
+        <Grid
+          container
+          direction="row"
+          justify="space-between"
+          alignItems="center"
+        >
+          <Typography variant="h5" color="inherit" noWrap>
+            <Link color="inherit" href="/">
+              OUR STORE
+            </Link>
+          </Typography>
+          <Box
+            display="flex"
+            width={120}
+            height={50}
+            bgcolor="lightpink"
+            alignItems="center"
+            justifyContent="center"
+            justify="center"
+            onClick={()=>props.increment()}
+          >
+            <ShoppingCartOutlinedIcon />{' '}
+            <Typography variant="h6" gutterBottom mx={3}>
+              cart ({props.products.count})
+            </Typography>
+          </Box>
+        </Grid>
       </Toolbar>
     </AppBar>
   );
 }
 
-export default Header;
+const mapStateToProps = (state) => ({ products: state.products });
+const mapDispatchToProps = { increment };
+export default connect(mapStateToProps, mapDispatchToProps)(Header);

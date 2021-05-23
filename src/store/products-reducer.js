@@ -1,39 +1,9 @@
-// let initialState = {
-//     productsList: [
-//       {_id: '5f1a51f01910080017657ed2', name: '1TB USB', 'category': 'Electronics', 'inStock': 963, 'price': 100.99},
-//       {_id: '5f1a51f71910080017657ed3', name: 'Monitor', 'category': 'Electronics', 'inStock': 960, 'price': 100.99},
-//       {_id: '5f1a51ff1910080017657ed4', name: 'Mouse', 'category': 'Electronics', 'inStock': 976, 'price': 100.99},
-//       {_id: '5f1a52031910080017657ed5', name: 'Keyboard', 'category': 'Electronics', 'inStock': 982, 'price': 100.99},
-//       {_id: '5f1a5f861910080017657ed7', name: 'TV', 'category': 'Electronics', 'inStock': 1973, 'price': 699},
-//       {_id: '5f1a5f761910080017657ed6', name: 'Apples', 'category': 'Food', 'inStock': 979, 'price': 100.1},
-//       {_id: '5f1a5faf1910080017657ed8', name: 'Calzones', 'category': 'Food', 'inStock': 929, 'price': 100.1},
-//     ],
-//     activeProduct: '',
-//   }
-
-//   export default function productsReducer(state = initialState, action) {
-//     const {type, payload} = action;
-
-//     switch(type) {
-//       case "ACTIVATED":
-//         const products = getProducts(payload.category);
-//         return {...state, products: products}
-//       default:
-//       return state;
-//     }
-//   }
-
-//   export function getProducts(category){
-//     const products = initialState.productsList;
-//     const response = products.filter(product => product.category === category);
-//     return response;
-//   }
-
-let initalState = {
+let initialState = {
   products: [
     {
       _id: '5f1a51f01910080017657ed2',
       name: 'TV',
+      url: 'https://images.pexels.com/photos/5721880/pexels-photo-5721880.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
       category: 'electronics',
       price: 699.0,
       inStock: 5,
@@ -41,6 +11,7 @@ let initalState = {
     {
       _id: '5f1a51f71910080017657ed3',
       name: 'Mobile',
+      url: 'https://images.pexels.com/photos/3571093/pexels-photo-3571093.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
       category: 'electronics',
       price: 400.0,
       inStock: 3,
@@ -48,6 +19,7 @@ let initalState = {
     {
       _id: '5f1a51ff1910080017657ed4',
       name: 'Radio',
+      url: 'https://images.pexels.com/photos/1213922/pexels-photo-1213922.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
       category: 'electronics',
       price: 99.0,
       inStock: 15,
@@ -55,6 +27,7 @@ let initalState = {
     {
       _id: '5f1a52031910080017657ed5',
       name: 'Glasses',
+      url: 'https://images.pexels.com/photos/3650926/pexels-photo-3650926.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
       category: 'clothing',
       price: 9.0,
       inStock: 25,
@@ -62,6 +35,7 @@ let initalState = {
     {
       _id: '5f1a5f861910080017657ed7',
       name: 'Socks',
+      url: 'https://images.pexels.com/photos/5746050/pexels-photo-5746050.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
       category: 'clothing',
       price: 12.0,
       inStock: 10,
@@ -69,6 +43,7 @@ let initalState = {
     {
       _id: '5f1a5f761910080017657ed6',
       name: 'Strawberries',
+      url: 'https://images.pexels.com/photos/785330/pexels-photo-785330.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
       category: 'food',
       price: 0.99,
       inStock: 500,
@@ -76,6 +51,7 @@ let initalState = {
     {
       _id: '5f1a5faf1910080017657ed8',
       name: 'Eggs',
+      url: 'https://images.pexels.com/photos/6294249/pexels-photo-6294249.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
       category: 'food',
       price: 1.99,
       inStock: 12,
@@ -83,25 +59,42 @@ let initalState = {
     {
       _id: '5f1a5faf1910080017657ed9',
       name: 'Bread',
+      url: 'https://images.pexels.com/photos/600620/pexels-photo-600620.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
       category: 'food',
       price: 2.39,
       inStock: 90,
     },
   ],
-  filetredProduct: [],
+  count: 0,
 };
 
-const products = (state = initalState, action) => {
+const products = (state = initialState, action) => {
   let { type, payload } = action;
   switch (type) {
     case 'ACTIVE':
-      let filetredProduct = state.products.filter((product) =>
+      let products = initialState.products.filter((product) =>
         product.category === payload ? product.category : null
       );
-      return { ...state, filetredProduct };
+      return { products, count: state.count };
+    case 'INCREMENT':
+      const count = state.count + 1;
+      return { products: state.products, count };
     default:
       return state;
   }
 };
 
 export default products;
+
+export const active = (categoryName) => {
+  return {
+    type: 'ACTIVE',
+    payload: categoryName,
+  };
+};
+
+export const increment = () => {
+  return {
+    type: 'INCREMENT',
+  };
+};

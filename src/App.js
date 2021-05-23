@@ -1,15 +1,15 @@
 import Header from './components/header';
 import Footer from './components/footer';
-import Categories from './components/categories';
-import Status from './components/products';
+import Store from './components/storefront';
+import Products from './components/products';
 import React from 'react';
 
 function App() {
   return (
     <>
       <Header />
-      <Categories />
-      <Status />
+      <Store />
+      <Products className="main"/>
       <Footer />
     </>
   );
