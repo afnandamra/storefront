@@ -1,7 +1,6 @@
 import Header from './components/header';
 import Footer from './components/footer';
 import Store from './components/storefront';
-import Products from './components/products';
 import React from 'react';
 
 function App() {
@@ -9,7 +8,7 @@ function App() {
     <>
       <Header />
       <Store />
-      <Products className="main"/>
+      
       <Footer />
     </>
   );

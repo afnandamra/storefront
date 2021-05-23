@@ -5,7 +5,7 @@ let initialState = {
       name: 'TV',
       url: 'https://images.pexels.com/photos/5721880/pexels-photo-5721880.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
       category: 'electronics',
-      price: 699.0,
+      price: 799.0,
       inStock: 5,
     },
     {
@@ -13,7 +13,7 @@ let initialState = {
       name: 'Mobile',
       url: 'https://images.pexels.com/photos/3571093/pexels-photo-3571093.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
       category: 'electronics',
-      price: 400.0,
+      price: 599.0,
       inStock: 3,
     },
     {
@@ -29,7 +29,7 @@ let initialState = {
       name: 'Glasses',
       url: 'https://images.pexels.com/photos/3650926/pexels-photo-3650926.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
       category: 'clothing',
-      price: 9.0,
+      price: 19.0,
       inStock: 25,
     },
     {
@@ -45,7 +45,7 @@ let initialState = {
       name: 'Strawberries',
       url: 'https://images.pexels.com/photos/785330/pexels-photo-785330.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
       category: 'food',
-      price: 0.99,
+      price: 2.99,
       inStock: 500,
     },
     {

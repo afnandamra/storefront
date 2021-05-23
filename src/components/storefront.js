@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import { Container, Typography, makeStyles } from '@material-ui/core';
 import Categories from './categories';
+import Products from './products';
 
 const useStyles = makeStyles((theme) => ({
   heroContent: {
@@ -18,31 +19,35 @@ const Store = (props) => {
   let description =
     props.activeList.activeCategories.description || 'Choose a category';
   return (
-    <div className={classes.heroContent}>
-      <Container maxWidth="sm" align="center">
-        <Categories />
-        <Typography
-          component="h3"
-          variant="h4"
-          align="center"
-          color="textPrimary"
-          mt="3"
-        >
-          {category}
-        </Typography>
-
-        <br />
-        <Typography
-          component="p"
-          variant="h5"
-          align="center"
-          color="textSecondary"
-          gutterBottom
-        >
-          {description}
-        </Typography>
-      </Container>
-    </div>
+    <main>
+      <div className={classes.heroContent}>
+        <Container maxWidth="sm" align="center">
+          <Categories />
+          <br />
+          <br />
+          <Typography
+            component="h3"
+            variant="h4"
+            align="center"
+            color="textPrimary"
+            mt="3"
+          >
+            {category}
+          </Typography>
+          <br />
+          <Typography
+            component="p"
+            variant="h5"
+            align="center"
+            color="textSecondary"
+            gutterBottom
+          >
+            {description}
+          </Typography>
+        </Container>
+      </div>
+      <Products className="main" />
+    </main>
   );
 };
 
