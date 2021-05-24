@@ -49,6 +49,7 @@ const Status = (props) => {
                     {product.name}
                   </Typography>
                   <Typography>Price: ${product.price}</Typography>
+                  <Typography>In stock: {product.price.inStock}</Typography>
                 </CardContent>
                 <CardActions>
                   <Button
