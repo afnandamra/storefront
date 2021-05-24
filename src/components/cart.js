@@ -12,7 +12,7 @@ import {
   makeStyles,
 } from '@material-ui/core';
 import ShoppingCartOutlinedIcon from '@material-ui/icons/ShoppingCartOutlined';
-import DeleteOutlinedIcon from '@material-ui/icons/DeleteOutlined';
+import DeleteIcon from '@material-ui/icons/Delete';
 
 const useStyles = makeStyles({
   list: {
@@ -53,6 +53,7 @@ const SimpleCart = (props) => {
               container
               alignItems="center"
               justify="center"
+              justifyContent="center"
               wrap="wrap"
               spacing={2}
             >
@@ -67,13 +68,24 @@ const SimpleCart = (props) => {
                   container
                   alignItems="center"
                   justify="space-between"
+                  justifyContent="center"
                   wrap="wrap"
                   spacing={2}
                 >
                   <Typography variant="h6">
                     <strong>{product.name}</strong> ({product.count + 1})
                   </Typography>
-                  <DeleteOutlinedIcon onClick={() => props.decrement(product)}/>
+                  <Typography variant="body1">
+                    ${(product.count + 1) * product.price}
+                    <DeleteIcon
+                      color="secondary"
+                      onClick={() => props.decrement(product)}
+                      style={{
+                        cursor: 'pointer',
+                        paddingTop: '5px',
+                      }}
+                    />
+                  </Typography>
                 </Grid>
               </ListItem>
             );
