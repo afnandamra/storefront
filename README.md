@@ -1,4 +1,4 @@
-# LAB - Application State with Redux
+# Lab: Redux - Combined Reducers
 
 - **Virtual Store Phase 2:** Continue work on the e-Commerce storefront, breaking up the store into multiple reducers and sharing functionality/data between components
 
