@@ -1,21 +1,21 @@
-# LAB - Application State with Redux
+# Lab: Redux - Combined Reducers
 
-- **Virtual Store Phase 1:** For this assignment, you will be starting the process of creating an e-Commerce storefront using React with Redux, coupled with your live API server
+- **Virtual Store Phase 2:** Continue work on the e-Commerce storefront, breaking up the store into multiple reducers and sharing functionality/data between components
 
 ### **Author:** Afnan Damra
-### **Version:** 1.0.0
+### **Version:** 1.1.0
 
 **Links:**
 
 - [Repo Link](https://github.com/afnandamra/storefront)
 - [Deployed Site](https://ad-storefront-401.netlify.app/)
-- [PR Link](https://github.com/afnandamra/storefront/pull/1)
+- [PR Link](https://github.com/afnandamra/storefront/pull/2)
 
 ## Documentation
 
 ### UML Diagram
 
-![UML Lab36](public/lab36.jpg)
+![UML Lab37](public/lab37.jpg)
 
 ## Resources
 
