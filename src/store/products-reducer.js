@@ -78,7 +78,19 @@ const products = (state = initialState, action) => {
       return { products, count: state.count };
     case 'INCREMENT':
       const count = state.count + 1;
-      return { products: state.products, count };
+      let productList = state.products.map((product) =>
+        payload === product.name
+          ? {
+              _id: product._id,
+              name: product.name,
+              url: product.url,
+              category: product.category,
+              price: product.price,
+              inStock: product.inStock - 1,
+            }
+          : product
+      );
+      return { products: productList, count };
     default:
       return state;
   }
@@ -93,8 +105,9 @@ export const active = (categoryName) => {
   };
 };
 
-export const increment = () => {
+export const increment = (name) => {
   return {
     type: 'INCREMENT',
+    payload: name,
   };
 };

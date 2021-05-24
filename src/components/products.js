@@ -55,7 +55,7 @@ const Status = (props) => {
                   <Button
                     size="small"
                     color="primary"
-                    onClick={() => props.increment()}
+                    onClick={() => props.increment(product.name)}
                   >
                     ADD TO CART
                   </Button>
