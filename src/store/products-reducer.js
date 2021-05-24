@@ -38,7 +38,7 @@ let initialState = {
       url: 'https://images.pexels.com/photos/5746050/pexels-photo-5746050.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
       category: 'clothing',
       price: 12.0,
-      inStock: 10,
+      inStock: 0,
     },
     {
       _id: '5f1a5f761910080017657ed6',

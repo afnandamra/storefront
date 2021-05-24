@@ -49,7 +49,7 @@ const Status = (props) => {
                     {product.name}
                   </Typography>
                   <Typography>Price: ${product.price}</Typography>
-                  <Typography>In stock: {product.price.inStock}</Typography>
+                  <Typography>{product.inStock > 0 ? `In stock, ${product.inStock} items left` : 'Out of Stock'}</Typography>
                 </CardContent>
                 <CardActions>
                   <Button
