@@ -7,7 +7,7 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(5),
   },
 }));
-function Footer() {
+const Footer = () => {
   const classes = useStyles();
   return (
     <footer className={classes.footer}>
