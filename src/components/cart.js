@@ -53,7 +53,6 @@ const SimpleCart = (props) => {
               container
               alignItems="center"
               justify="center"
-              justifyContent="center"
               wrap="wrap"
               spacing={2}
             >
@@ -68,7 +67,6 @@ const SimpleCart = (props) => {
                   container
                   alignItems="center"
                   justify="space-between"
-                  justifyContent="center"
                   wrap="wrap"
                   spacing={2}
                 >
