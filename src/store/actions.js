@@ -11,9 +11,6 @@ export const getRemoteData = function (api) {
         console.log('step 4: actions third', res.body.products);
         dispatch(getProducts({ results: res.body.products }));
       })
-      .catch((e) => {
-        console.log('error', e.message);
-      });
   };
 };
 
