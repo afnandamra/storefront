@@ -11,6 +11,7 @@ export const getRemoteData = function (api) {
         console.log('step 4: actions third', res.body.products);
         dispatch(getProducts({ results: res.body.products }));
       })
+      .catch((e) => console.error(e.message));
   };
 };
 
@@ -41,7 +42,7 @@ export const getProducts = (products) => {
   console.log('step 5: products action', products);
   return {
     type: 'GET',
-    payload: products,
+    payload: products.results,
   };
 };
 
